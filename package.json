@@ -1,0 +1,27 @@
+{
+  "name": "annapoorna",
+  "version": "1.0.0",
+  "description": "Food Ordering App",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "React",
+    "React-DOM",
+    "Food",
+    "Ordering",
+    "App",
+    "React-project"
+  ],
+  "author": "Narendran S",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.11.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
