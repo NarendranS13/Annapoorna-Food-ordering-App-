@@ -805,7 +805,7 @@ const Body = () => {
             <div className="res-container">
                {/* // Always use Keys (not acceptable) <<<<<< index as key <<<<<< unique key (Best practices)  */}
             {
-                resList.map((restaurant,index) => (<RestaurantCard key={index} resData={restaurant} />))
+                resList.map((restaurant) => (<RestaurantCard key={restaurant.data.id} resData={restaurant} />))
             }
             </div>
         </div> 
