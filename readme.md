@@ -11,3 +11,12 @@ Development started on Feb 25 2024.
                     // -- Image
                     // -- Res name, cuisine, rating, eta?
 // -- Footer
+
+
+# React Hooks
+(Normal JS Utility Functions)
+ - useState()
+ - useEffect()
+ (80% vs 20% usage)
+
+# useState() -- Superpowerful State variables in react. 
