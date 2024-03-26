@@ -20,3 +20,13 @@ Development started on Feb 25 2024.
  (80% vs 20% usage)
 
 # useState() -- Superpowerful State variables in react. 
+
+
+
+# Routing in Web Apps.
+1. Client Side routing.
+2. Server Side Routing.
+
+Server side routing -- It will do network call and bring that required page (old way). Will take some time and reload.
+
+Client Side routing - All the components are already loaded. Routing will just change the component. Check the Network tab in Edge, chrome. Here the React app only do the Api call.
