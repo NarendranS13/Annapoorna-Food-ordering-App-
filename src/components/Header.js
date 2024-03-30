@@ -4,18 +4,20 @@ import { Link } from "react-router-dom";
 const Header =() => {
 
     // let btnName = "Login";
-    console.log("Header Render");
+    // console.log("Header Render");
     const [btnNameReact, setBtnNameReact] = useState("Login");
     // If no dependency array => useEffect is called on every Render
     // Empty array => useEffect is called on initial render(first Load itself)
     // If dependency array is btnNameReact => called everytime when btnNameReact updated.
-    useEffect(()=>{console.log("useEffect called")},[btnNameReact]);
+    useEffect(()=>{},[btnNameReact]);
     return (
         <div className="header">
             <div className ="logo-container">
+                <Link to = '/'>
                 <img 
-                className="logo"
+                className="logo" 
                 src={LOGO_URL}/>
+                </Link>
             </div>
             <div className = "nav-items">
                 <div className="btn-group" role="group" aria-label="nav-bar">
