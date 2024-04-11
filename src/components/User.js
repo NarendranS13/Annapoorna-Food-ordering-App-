@@ -8,6 +8,7 @@ const User = (props) => {
 
     useEffect(()=>{
         //We use to call the API call.
+        
     },[]);
    
   return (

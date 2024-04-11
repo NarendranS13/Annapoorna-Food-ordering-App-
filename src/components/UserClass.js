@@ -6,42 +6,47 @@ class UserClass extends React.Component {
         super(props);
         // console.log(props);
         this.state = {
-            count: 0,
+            userInfo: {
+                login: "Dummy",
+                id: 123,
+                avatar_url: "https:dummy.jpeg",
+            },
+
         }
-        console.log(this.props.name +"constructor of UserClass");
+        
     };
 
+// To call an API in class based we need to make componentDidMount as async
+    async componentDidMount() {
+        const data = await fetch("https://api.github.com/users/narendrans13");
+        const json = await data.json();
+        
 
-    componentDidMount() {
-        console.log(this.props.name +"Component did Mount");
+        this.setState({
+            userInfo: json,
+        });
+        console.log(json);
     };
 
+    componentDidUpdate() {
+        console.log("Component Did Update");
+    };
+
+    componentWillUnmount() {
+        console.log("Will unmount");
+    };
 
     render () {
-        console.log(this.props.name +"render of UserClass");
-        const {name, location} = this.props;
-        const {count} = this.state;
+        
+        const {login,id,avatar_url} = this.state.userInfo;
+
         return (
             <div className = "card">
-                <h2 className="card-title">{name}</h2>
-                <h3 className="card-text text-small">Location: {location}</h3>
+                <img src={avatar_url} />
+                <h2 className="card-title">{login}</h2>
+                <h3 className="card-text text-small">Github: {id}</h3>
                 <h3 className="card-text">Email: nren115@gmail.com</h3>
                 <h3 className="card-text">Phone: 7397371808</h3>
-                <h3 className="card-text">Count={count}</h3>
-                <button onClick={()=>{
-                        // Count should increase in hitting the button.
-                        // NEVER UPDATE STATE VARIABLES DIRECTLY
-                        this.setState({count:this.state.count+1})
-                }}>Count Increase </button>
-                <button onClick={()=>{
-                    //  Decrease the count
-                    this.setState({
-                        count: this.state.count-1
-                    })
-                }}>Count Decrease</button>
-
-        
-        
             </div>
           );
     };

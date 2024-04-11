@@ -30,3 +30,14 @@ Development started on Feb 25 2024.
 Server side routing -- It will do network call and bring that required page (old way). Will take some time and reload.
 
 Client Side routing - All the components are already loaded. Routing will just change the component. Check the Network tab in Edge, chrome. Here the React app only do the Api call.
+
+
+# Redux Tool Kit (RTK)
+        - Install Redux Library (@redux/toolkit and react-redux). npm i @reduxjs/toolkit
+        and npm i react-redux.
+        - Build our Redux Store.
+        - Connect our store to our App.
+        - Slice (cartSlice)
+        - Dispatch Action
+        - Reducer Function
+        - Read the data using Selector

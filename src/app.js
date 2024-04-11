@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, lazy,Suspense, useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css'
 import Header from "./components/Header.js";
@@ -8,27 +8,42 @@ import About from './components/About.js';
 import Contact from './components/Contact.js';
 import Error from './components/Error.js';
 import FooterComponent from './components/Footer.js';
+import Shimmer from './components/shimmer.js';
 import RestaurantMenu from './components/RestaurantMenu.js';
+import UserContext from './utils/UserContext.js';
+import {Provider} from 'react-redux';
+import appStore from './utils/appStore.js';
+import Cart from './components/Cart.js';
+// import Grocery from './components/Grocery.js';
 
 
-// Inline styles - Not prefered.
-// const styleCard = {
-//     background: "#f0f0f0",
-// };
-// <div className = "res-card" style = {styleCard}>
-//<div className = "res-card" style = {{
-    // backgroundColor: "#f0f0f0"
-// }}>
 
 
+// Lazy is used to do Data chunking/ Lazy loading/On demand Load
+const Grocery = lazy(() => import("./components/Grocery"));
 const AppLayout = () => {
+
+    // Authentication
+     const [userName, setUserName] = useState();
+     useEffect(()=>{
+        // Make an API Call and send UserName and Password
+        const data = {
+            name: "Narendran"
+        }
+        setUserName(data.name);
+     },[])
+
     return (
+        <Provider store = {appStore}>
+        <UserContext.Provider value={{loggedInUser: userName, setUserName}}>
         <div className="app">
             <Header />
             {/* if my path = /about then <About /> or if my path is contact = /contact  then <Contact />*/}
             <Outlet />
             <FooterComponent />
         </div>
+        </UserContext.Provider>
+        </Provider>
     )
 };
 
@@ -50,8 +65,16 @@ const appRouter = createBrowserRouter([
                 element: <Contact />
             },
             {
+                path: "/grocery",
+                element: <Suspense fallback={<Shimmer />}><Grocery /></Suspense>
+            },
+            {
                 path: "/restaurants/:resId",
                 element: <RestaurantMenu />
+            },
+            {
+                path: "/cart",
+                element: <Cart />
             }
         ],
         errorElement: <Error />

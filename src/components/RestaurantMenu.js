@@ -1,29 +1,21 @@
 import { useEffect,useState } from "react";
 import Shimmer from "./shimmer";
 import { useParams } from "react-router-dom";
-import { MENU_API } from "../utils/constants";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
+import RestaurantCategory from "./RestaurantCategory";
 
 
 
 const RestaurantMenu = () => {
 
-    const [resInfo, setResInfo] = useState(null);
-
     const {resId} = useParams();
     // console.log(resId);
 
-    useEffect(() => {
-            fetchMenu()
-    },[]);
+    const resInfo = useRestaurantMenu(resId);
+    const [showIndex, setShowIndex] = useState(0);
+    const dummy = "Dummy Data";
 
-const fetchMenu = async () => {
-    const data = await fetch(MENU_API + resId);
-    const json = await data.json();
 
-    // console.log(json);
-    // console.log(json.data.cards[0].card.card.info.name);
-    setResInfo(json.data);
-};
 
 // Move the ternary operator
 if (resInfo === null) return <Shimmer />
@@ -35,24 +27,33 @@ const {name,cuisines,costForTwoMessage,sla} = resInfo?.cards?.[2]?.card?.card?.i
 
 const {itemCards} = resInfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[2]?.card?.card;
 // console.log(itemCards);
+// console.log(resInfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
+
+const categories = 
+resInfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+  c=> c.card?.card?.["@type"] ===  "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+  );
+  // console.log(categories);
 
 // const {cards} = resInfo?.cards?.[2]?.groupedCard?.cardGroupMap?.REGULAR;
 // console.log(cards);
 
 
   return  (
-    <div className = 'menu'>
-        <h1>{name}</h1>
-        <p>{cuisines.join(', ')}-{costForTwoMessage}</p>
-        <p>{sla.minDeliveryTime}-{sla.maxDeliveryTime} minutes</p>
-        <ul>
-            {itemCards.map((item)=> (
-            <li key={item.card.info.id}>
-                {item.card.info.name} - Rs.{item.card.info.price / 100}
-            </li>
-            ))}
-        </ul>
-
+    <div className = 'text-center'>
+        <h1 className="font-bold my-5 text-2xl">{name}</h1>
+        <p className="font-semibold text-lg">{cuisines.join(', ')}-{costForTwoMessage}</p>
+        {/* cateogories of accordian (drop down menu) */}
+        {categories.map((category, index) =>(<RestaurantCategory 
+        key={category?.card?.card?.title} 
+        data ={category?.card?.card}
+        // Controlled component where Menu controls the category component.
+        showItems = {index === showIndex ? true:false}
+        setShowIndex = {() => setShowIndex(index)}
+        dummy = {dummy}
+        />
+        ))}
+        
 
     </div>
   );
