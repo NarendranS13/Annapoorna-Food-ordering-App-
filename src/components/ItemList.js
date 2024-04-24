@@ -16,7 +16,7 @@ const ItemList = ({items,dummy}) => {
     return (
         <div>
             {menulist.map((item) => (
-                <div key={item.card.info.id} className="p-2 m-2 border-green-400 border-b-2 text-left flex">
+                <div data-testid = "fooditems" key={item.card.info.id} className="p-2 m-2 border-green-400 border-b-2 text-left flex">
                     {/* Left column for text */}
                     <div className="w-9/12 pr-4">
                         <div className="py-2">

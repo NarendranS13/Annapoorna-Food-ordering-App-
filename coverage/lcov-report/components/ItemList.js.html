@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/Header.js</title>
+    <title>Code coverage report for components/ItemList.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">components</a> Header.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">components</a> ItemList.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>9/10</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/4</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.88% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/9</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
@@ -106,33 +106,25 @@
 <a name='L41'></a><a href='#L41'>41</a>
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
-<a name='L44'></a><a href='#L44'>44</a>
-<a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L44'></a><a href='#L44'>44</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -146,11 +138,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -161,56 +149,50 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { LOGO_URL } from "../utils/constants";
-import React,{useState,useEffect,useContext} from "react";
-import { Link } from "react-router-dom";
-import useOnlineStatus from "../utils/useOnlineStatus";
-import UserContext from "../utils/UserContext.js";
-import { useSelector } from "react-redux";
-const Header =() =&gt; {
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {useDispatch} from "react-redux";
+import { CDN_URL } from "../utils/constants";
+import { addItem } from "../utils/cartSlice";
 &nbsp;
-    const [btnNameReact, setBtnNameReact] = useState("Login");
 &nbsp;
-    const onlineStatus = useOnlineStatus();
 &nbsp;
-    const {loggedInUser} = useContext(UserContext);
+const ItemList = ({items,dummy}) =&gt; {
+    const menulist = items;
 &nbsp;
-    // Subsriber to the store using a Selector
-    const cartItems = useSelector((store) =&gt; store.cart.items);
-    console.log(cartItems);
-    
-    useEffect(()=&gt;{},[btnNameReact]);
+    const dispatch = useDispatch();
+    // Users add items to the cart using Redux
+    const handleAddItem = (item) =&gt; {
+        // Dispatch an Action
+        dispatch(addItem(item));
+    }
     return (
-        &lt;div className="flex justify-between bg-gray-100 shadow-lg"&gt;
-            &lt;div className ="logo-container"&gt;
-                &lt;Link to = '/'&gt;
-                &lt;img 
-                className="w-56" 
-                src={LOGO_URL} alt="company logo"/&gt;
-                &lt;/Link&gt;
-            &lt;/div&gt;
-            &lt;div className = "flex items-center"&gt;
-                &lt;ul className="flex p-4 m-4"&gt;
-                    &lt;li className="px-4"&gt;Online Status:{onlineStatus ? "✅":<span class="branch-1 cbranch-no" title="branch not covered" >"⚠️"}</span>&lt;/li&gt;
-                    &lt;li className="px-4 "&gt;&lt;Link to='/' className="text-black no-underline"&gt;Home&lt;/Link&gt;&lt;/li&gt;
-                    &lt;li className="px-4"&gt;&lt;Link to='/about' className="text-black no-underline"&gt;About Us&lt;/Link&gt;&lt;/li&gt;
-                    &lt;li className="px-4"&gt;&lt;Link to='/Contact' className="text-black no-underline"&gt;Contact Us&lt;/Link&gt;&lt;/li&gt;
-                    &lt;li className="px-4"&gt;&lt;Link to='/Grocery' className="text-black no-underline"&gt;Grocery&lt;/Link&gt;&lt;/li&gt;
-                    &lt;li className="px-4 font-bold text-xl"&gt;&lt;Link to='/cart' className="text-black no-underline"&gt;Cart ({cartItems.length} items)&lt;/Link&gt;&lt;/li&gt;
-                    &lt;button className="login w-20 bg-blue-400 rounded-lg hover:bg-blue-800 " 
-                    onClick={<span class="fstat-no" title="function not covered" >()</span>=&gt;{
-<span class="cstat-no" title="statement not covered" >                        btnNameReact === 'Login' ? setBtnNameReact("Logout"):setBtnNameReact("Login");</span>
-                    }
-                    }&gt;{btnNameReact}
-                    &lt;/button&gt;
-                    &lt;li className="px-4 font-bold"&gt;{loggedInUser}&lt;/li&gt;
-                &lt;/ul&gt;
-            &lt;/div&gt;
+        &lt;div&gt;
+            {menulist.map((item) =&gt; (
+                &lt;div data-testid = "fooditems" key={item.card.info.id} className="p-2 m-2 border-green-400 border-b-2 text-left flex"&gt;
+                    {/* Left column for text */}
+                    &lt;div className="w-9/12 pr-4"&gt;
+                        &lt;div className="py-2"&gt;
+                            &lt;span&gt;{item.card.info.name}&lt;/span&gt;
+                            &lt;span&gt; ₹{item.card.info.price ? item.card.info.price/100 : <span class="branch-1 cbranch-no" title="branch not covered" >item.card.info.defaultPrice/100}</span>&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p&gt;{item.card.info.description}&lt;/p&gt;
+                    &lt;/div&gt;
+                    {/* Right column for image */}
+                    &lt;div className="w-3/12 p-4 relative"&gt;
+                    &lt;div className="absolute top-0 left-0 attribute"&gt;
+                        &lt;button className="p-2 mx-5 rounded-lg bg-green-600 shadow-lg font-bold" 
+                        // Callback Function
+                        onClick={()=&gt; handleAddItem(item)}&gt;
+                            Add +&lt;/button&gt;
+                    &lt;/div&gt;
+                        &lt;img src={CDN_URL + item.card.info.imageId} className="w-full rounded-2xl" alt={item.card.info.name} /&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            ))}
         &lt;/div&gt;
-    )
+    );
 };
 &nbsp;
-export default Header;</pre></td></tr></table></pre>
+export default ItemList</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->

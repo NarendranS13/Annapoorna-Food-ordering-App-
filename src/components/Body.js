@@ -55,7 +55,7 @@ const {loggedInUser,setUserName} = useContext(UserContext);
         <div className="body">
             <div className="filter flex">
                 <div className='search m-4 p-4'>
-                    <input type="text" className = 'border border-solid border-black' value={searchText} onChange={(e)=> {setSearchText(e.target.value);
+                    <input type="text" data-testid = "searchInput"className = 'border border-solid border-black' value={searchText} onChange={(e)=> {setSearchText(e.target.value);
                     console.log(searchText)}}/>
                         <button className="px-4 py-2 m-4 bg-green-100 rounded-lg" onClick={ ()=> {
                             // Filter the restaurant cards and update the UI.

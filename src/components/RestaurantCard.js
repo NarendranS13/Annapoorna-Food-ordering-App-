@@ -9,7 +9,7 @@ const RestaurantCard = (props) => {
     const {loggedInUser} = useContext(UserContext);
     const {cloudinaryImageId, name, avgRating,cuisines,costForTwo,sla} = resData?.info;
     return (
-        <div className = "m-4 p-4 w-[250px] h-[600px] rounded-lg bg-gray-200 hover:bg-green-200">
+        <div data-testid="resCard" className = "m-4 p-4 w-[250px] h-[600px] rounded-lg bg-gray-200 hover:bg-green-200">
             <img className="rounded-2xl w-[230px] h-[200] px-2"
             src ={ CDN_URL + cloudinaryImageId}  alt='Food image' />
             <h3 className = "font-bold py-2 text-2xl text-black">{name}</h3>
