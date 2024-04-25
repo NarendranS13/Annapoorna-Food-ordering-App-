@@ -1,13 +1,17 @@
 {
+  "homepage": "https://NarendranS13.github.io/Annapoorna-Food-ordering-App-",
   "name": "annapoorna",
   "version": "1.0.0",
   "description": "Food Ordering App",
   "main": "app.js",
   "scripts": {
+    "predeploy":"npm run build",
+    "deploy": "gh-pages -d build",
     "test": "jest",
-    "watch-test":"jest --watch",
+    "watch-test": "jest --watch",
     "start": "parcel index.html",
     "build": "parcel build index.html"
+    
   },
   "keywords": [
     "React",
@@ -38,6 +42,7 @@
     "@testing-library/jest-dom": "^6.4.2",
     "bootstrap": "^5.3.3",
     "D": "^1.0.0",
+    "gh-pages": "^6.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^9.1.0",
