@@ -21,19 +21,38 @@ const Body = () => {
         fetchData();
     }, []);
 
+// const fetchData = async () => {
+
+
+//     const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9185161&lng=80.0929505&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
+
+//     const json = await data.json();
+//     // console.log(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+//     setListOfRestraunt(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+//     setFilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+
+
+// };
+
 const fetchData = async () => {
-
-
-    const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9185161&lng=80.0929505&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING',{mode:'no-cors'});
-
-    const json = await data.json();
-    // console.log(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setListOfRestraunt(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setFilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-
-
-};
-
+    const corsProxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    const apiUrl = 'https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9185161&lng=80.0929505&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING';
+  
+    try {
+      const response = await fetch(corsProxyUrl + apiUrl, {
+        headers: {
+          'Origin': window.location.origin // Set the origin header to the current origin
+        }
+      });
+      const json = await response.json();
+      // Assuming setListOfRestraunt and setFilteredRestaurant are state setter functions
+      setListOfRestraunt(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      setFilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      // Handle error
+    }
+  };
 
 
 
