@@ -1,17 +1,11 @@
 This is a Food Ordering App created using React. 
-Development started on Feb 25 2024.
+![image](https://github.com/NarendranS13/Annapoorna-Food-ordering-App-/assets/108397072/98b27103-26f0-4ccd-b995-62c122315108)
 
-// App layout
-// -- Header
-//          -- Logo Component
-//          -- Nav items.
-// -- Body
-            // -- Search Component
-            // -- Restaurant Container
-                    // -- Image
-                    // -- Res name, cuisine, rating, eta?
-// -- Footer
+# Live App
+https://annapoorna-food-app.netlify.app/
 
+Note: Use CORS Plugin to view the app as it was using Live UPI.
+https://chromewebstore.google.com/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf
 
 # React Hooks
 (Normal JS Utility Functions)
@@ -19,7 +13,9 @@ Development started on Feb 25 2024.
  - useEffect()
  (80% vs 20% usage)
 
-# useState() -- Superpowerful State variables in react. 
+# Custom Hooks Creation
+Deployment of Custom Hooks for segregation of Hooks functionality from the JS files. 
+Easy to debug and maintain code.
 
 
 
@@ -31,6 +27,8 @@ Server side routing -- It will do network call and bring that required page (old
 
 Client Side routing - All the components are already loaded. Routing will just change the component. Check the Network tab in Edge, chrome. Here the React app only do the Api call.
 
+# Tailwind CSS
+Styling is done via Tailwind CSS.
 
 # Redux Tool Kit (RTK)
         - Install Redux Library (@redux/toolkit and react-redux). npm i @reduxjs/toolkit
