@@ -40,7 +40,7 @@ Styling is done via Tailwind CSS.
         - Reducer Function
         - Read the data using Selector
 
-# Types of Testig (Developer)
+# Types of Testing (Developer)
  - Unit Testing. -- Testing an Component in isolation.
  - Integration Testing. -- Checking the integration of Mulitple Components.
  - End to End Testing. (e2e testing). -- Testing where an User enters the Applications and exiting. Eg. Selenium. 
