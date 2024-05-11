@@ -1,3 +1,9 @@
+# App Working Demo
+
+https://github.com/NarendranS13/Annapoorna-Food-ordering-App-/assets/108397072/6eaac316-c693-48f6-bc2e-629c337f0965
+
+
+
 This is a Food Ordering App created using React. 
 ![image](https://github.com/NarendranS13/Annapoorna-Food-ordering-App-/assets/108397072/98b27103-26f0-4ccd-b995-62c122315108)
 
